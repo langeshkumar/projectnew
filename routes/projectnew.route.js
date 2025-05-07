@@ -1,25 +1,18 @@
 import express from 'express';
+import { projectdelete, projectget, projectpost, projectput } from '../controller/projectnew.controller.js';
 
 const projectnewRoute = express.Router();
 
 // crud process
 // R - for read process 
-projectnewRoute.get('/', (req, res) => {
-    res.json({ msg: "This is get projectnew" });
-});
+projectnewRoute.get('/', projectget);
 
 // C - for create process 
-projectnewRoute.post('/', (req, res) => {
-    res.json({ msg: "This is post projectnew" });
-});
+projectnewRoute.post('/', projectpost);
 
 // U - for update process 
-projectnewRoute.put('/:id', (req, res) => {
-    res.json({ msg: "This is put projectnew" });
-});
+projectnewRoute.put('/:id', projectput);
 // D - for delete process 
-projectnewRoute.delete('/:id', (req, res) => {
-    res.json({ msg: "This is delete projectnew" });
-});
+projectnewRoute.delete('/:id', projectdelete);
 
 export default projectnewRoute;
